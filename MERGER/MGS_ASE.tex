@@ -1,0 +1,164 @@
+\documentclass[times]{MGS_class}
+\usepackage{wasysym}
+\usepackage{enumitem}
+\usepackage{cuted}%
+\usepackage{afterpage}%
+
+\usepackage{blindtext}
+\usepackage{acronym}
+\usepackage{todo}
+
+\usepackage{fancyhdr}
+
+
+\newcommand{\code}[1]{\texttt{#1}}                                          %withouth syntax highlighting
+\newcommand{\seeMore}[2]{\textit{(see chapter \ref{#1}, p.~\pageref{#1}: #2)}}          %Querverweis
+\newcommand{\see}[1]{\textit{(see chapter \ref{#1}, p.~\pageref{#1})}}                  %Querverweis
+\newcommand{\seeSimpl}[1]{\textit{(see chapter \ref{#1})}}                  %Querverweis ohne Kapitelname
+\newcommand{\smallHeading}[1]{ \vspace{5px} \noindent \textbf{#1} \vspace{5px} \\ }
+\newcommand{\emptyLine}{\vspace{1em}}
+\newenvironment{codeBlock}{\lstset{stepnumber=0}}{\lstset{stepnumber=1}}    %Hat irgendwie nicht funktioniert, dass ich das lstlisting auch gleich ins environment dazu gebe
+
+%https://tex.stackexchange.com/questions/42619/x-mark-to-match-checkmark
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\pagestyle{fancy} 
+\fancyhf{} 
+
+\fancyhead[L]{Toolchain for Game Development} %Kopfzeile links
+\fancyhead[C]{} %zentrierte Kopfzeile
+\fancyhead[R]{Contents} %Kopfzeile rechts Name
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+\fancyfoot[C]{\thepage} %Seitennummer
+
+\begin{document}
+
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.35\textwidth]{./img/MGS.jpg}\par\vspace{1cm}
+	{\scshape\LARGE University of Applied Sciences Technikum Wien \par}
+	\vspace{1cm}
+	{\scshape\Large Advanced Software Engineering \par}
+	\vspace{1.5cm}
+	{\huge\bfseries Toolchain for Game Development \par}
+	\vspace{2cm}
+	{\Large\itshape Master Game Engineering and Simulation\par}
+	\vfill
+	supervised by\par
+	FH-Prof. DI (FH) Alexander \textsc{Hofmann}
+	\vfill
+
+	% Bottom of the page
+	{\large \today\par}
+\end{titlepage}
+
+\onecolumn
+\begin{center}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\tableofcontents
+\end{center}
+%\normalsize
+\hspace{15mm}
+
+\pagebreak
+\twocolumn
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\twocolumn[{\csname @twocolumnfalse\endcsname
+\begin{center}
+\part{Software Maintenance in Game Engineering}
+\textit{Michael Knett and David Portisch}
+\end{center}
+%\normalsize
+\hspace{15mm}
+\vspace*{1cm}
+}]%---
+\fancyhead[R]{Michael Knett and David Portisch} %Kopfzeile rechts Name
+\input{../MGS_SoftwareMaintenance/MGS_ASE.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\twocolumn[{\csname @twocolumnfalse\endcsname
+\begin{center}
+\part{Self Publishing}
+\textit{Lukas Frühstück and Jakob Schade}
+\end{center}
+%\normalsize
+\hspace{15mm}
+\vspace*{1cm}
+}]%---
+\fancyhead[R]{Lukas Frühstück and Jakob Schade} %Kopfzeile rechts Name
+\setcounter{section}{0}
+\input{../MGS_Self_Publishing/MGS_ASE.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\twocolumn[{\csname @twocolumnfalse\endcsname
+\begin{center}
+\part{GPU and CPU profiling of C++ and C\# programs}
+\textit{Kernjak Martin and Kucher Josua}
+\end{center}
+%\normalsize
+\hspace{15mm}
+\vspace*{1cm}
+}]%---
+\fancyhead[R]{Kernjak Martin and Kucher Josua} %Kopfzeile rechts Name
+\setcounter{section}{0}
+\input{../MGS_Profiling/MGS_ASE.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\twocolumn[{\csname @twocolumnfalse\endcsname
+\begin{center}
+\part{Software Testing in Unity and C++}
+\textit{Jakob Maier and Simon Dimitriadis}
+\end{center}
+%\normalsize
+\hspace{15mm}
+\vspace*{1cm}
+}]%---
+\fancyhead[R]{Jakob Maier and Simon Dimitriadis} %Kopfzeile rechts Name
+\setcounter{section}{0}
+\input{../MGS_Testing/MGS_ASE.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\twocolumn[{\csname @twocolumnfalse\endcsname
+\begin{center}
+\part{Software Architecture}
+\textit{Florian Krauß and Dino Madach} %+ Hannes Höttinger?
+\end{center}
+%\normalsize
+\hspace{15mm}
+\vspace*{1cm}
+}]%---
+\fancyhead[R]{Florian Krauß and Dino Madach} % Kopfzeile rechts Name
+\setcounter{section}{0}
+\input{../MGS_Software_Architecture/MGS_ASE.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\twocolumn[{\csname @twocolumnfalse\endcsname
+\begin{center}
+\part{Style Guide}
+\textit{Sebastian Szuzskiewicz and Sascha Kalab}
+\end{center}
+%\normalsize
+\hspace{15mm}
+\vspace*{1cm}
+}]%---
+\fancyhead[R]{Sebastian Szuzskiewicz and Sascha Kalab} %Kopfzeile rechts Name
+\setcounter{section}{0}
+\input{../MGS_ASE_StyleGuides/MGS_ASE.tex}
+
+%globalbibliography
+\vfill
+\clearpage
+\onecolumn
+
+\fancyhead[R]{References} %Kopfzeile rechts
+
+%\bibliographystyle{apalike}
+\bibliographystyle{unsrturl}%{ieeetr}
+%% -END ENGLISH------
+\bibliography{Bibliography}
+
+
+\end{document}

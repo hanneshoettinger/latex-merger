@@ -1,0 +1,169 @@
+%\documentclass[times]{MGS_class}
+%-----
+%Title und Author angeben
+%\title{This is a test article\\
+%for the Master\\
+%Game Engineering and Simulation}
+%\author{NAME \textsuperscript{1} und NAME \textsuperscript{1}}
+%%die Institute weiter unten zu den zugehörigen superscripts angeben
+%
+%%\begin{document}
+%
+%\twocolumn[{\csname @twocolumnfalse\endcsname
+%\begin{center}
+%\maketitle
+%%\thispagestyle{empty}
+%
+%%------
+%%ANGABE DER INSTITUTE ANFANG
+%
+%\noindent \scriptsize \textsuperscript{1}\textsl{FH Technikum Wien, Game Engineering und Simulation, Wien, AUT}\\
+%
+%%ANGABE DER INSTITUTE ENDE
+%%------
+%\end{center}
+%%\normalsize
+%\hspace{15mm}
+%
+%}]%---
+
+\begin{abstract}
+2nd File
+\end{abstract}
+\begin{keywords}
+algorithm $\beta$-phase testing, group-velocity matching, AI
+\end{keywords}
+
+\section{Einleitung} 
+
+Link (\url{www.seniam.org}).
+
+Code:
+
+\begin{lstlisting}[label={list:first},caption=Sample code.]
+#include <iostream>
+ 
+int main()
+{
+  std::cout << "Hello World!" << std::endl;
+  return 0;
+}
+\end{lstlisting}
+
+Citation: \citep{lohse_how_2010}. \\
+another Citation: \cite{smeets_throwing_2002} describe...\\
+Bildreferenz \fref{subfig:label1} einleitet. 
+
+Subfigure:
+
+\begin{figure}[htbp] 
+	\centering
+	\subfigure[Caption1]
+	{\includegraphics[width=0.7\columnwidth]{img/test1.png}
+	\label{subfig:label1}}
+	\subfigure[Caption2]
+	{\includegraphics[width=0.7\columnwidth]{img/test2.png}
+	\label{subfig:label2}}
+	\caption{Subfigure Caption}
+	\label{fig:figure1}
+\end{figure} 
+
+% this is a pagebreak
+\pagebreak
+
+\section{Methoden}
+
+
+\begin{description}
+\item \textbf{Description}
+\begin{enumerate}
+\item text text text
+\item text text text
+\item text text text
+\end{enumerate}
+\end{description}
+
+
+\section{Ergebnisse}
+
+Tabelle:
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{c|c}
+Bereich & f [Hz] \\ \hline \hline
+Anfang & 194 \\ \hline
+Mitte & 229 \\ \hline
+Ende & 220
+\end{tabular}
+\caption{Ergebnis Median Frequenzen}
+\label{tab:medfrequ}
+\end{table}
+
+\section{Diskussion}
+
+
+Start here.
+This is math in text: $\frac{\alpha + 2}{\sqrt{10 + x^2}}$.
+
+
+({\it e.g.} [5, 9, 11, 12, 15, 16, 19])
+
+Start equation here:
+
+\begin{equation}
+{\rm GVM}_{F,SH} = \left({\rm GV}_F \cos \theta \right )^{-1} -
+\left ({\rm GV}_{SH}\right)^{-1} = 0
+\end{equation}
+
+or
+
+\begin{equation}
+\begin{array}{rcl}
+\displaystyle{\theta_{\rm int} \left(\lambda_F\right)} & = &
+\displaystyle{\arcsin \left[ n_F
+\left(\lambda_{F}^* \right) \sin \theta^* / n_F \left(\lambda_F
+\right)\right]}\\
+& = & \displaystyle{\arcsin \big [\sin \theta_{\rm ext} / n_F
+(\lambda_F)\big]~.}
+\end{array}
+\end{equation}
+
+% this is a columnbreak
+\vfill\break
+
+Include a figure here:
+
+\begin{figure}[!hbp]
+\includegraphics[scale = 0.5]{img/test3.png}
+\caption{ caption \protect with citation \cite{smeets_throwing_2002}}
+\label{fig:test1}
+\end{figure}
+
+in \fref{fig:test1} - this was a reference to a figure using the label!
+
+% Bibliography
+
+
+
+% Option 1: Bibliography generation with BibTeX:
+% Add all refernces to the *.bib file (here Literatur.bib). Then run LaTeX, BibTeX, and again twice LaTeX.
+% Use \cite{kop05} within the text for a citation.
+% - GEMRAN ----------
+%\bibliographystyle{apalike-url-de} %ermöglicht longnamesfirst Option. Bei erster Erwähnung werden alle Autoren gennannt in der Folge et al. verwenden wir aber nicht
+% - END GERMAN-------
+%% -ENGLISH---------
+
+\bibliographystyle{apalike-url-de}
+%% -END ENGLISH------
+\bibliography{Bibliography}
+% Option 2: Bibliography generation without BibTeX:
+%\begin{thebibliography}{99}
+%\bibitem[kop05]{kop05}
+%H.~Kopka, {\em LaTeX, Band 1: Einf"uhrung}, Pearson Studium, M"unchen, 3.~Auflage, 2005.
+%\bibitem[knu98]{knu98}
+%F.~Mittelbach, M.~Goossens, J.~Braams, D.~Carlisle, and Ch. Rowley, {\em The LaTeX Companion}, 
+%Addison-Wesley, 2nd edition, 2004.
+%\end{thebibliography}
+
+%\end{document}
