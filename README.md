@@ -7,4 +7,4 @@ The papers can be compiled itself by changing the top of the file and by includi
 
 In the folder **MERGER** the .bib has to have all references from all individual papers, as well as the img folder all images included.
 
-
+Compile *merge_docs.tex* with PDFLatex - BibTex - PDFLatex - PDFLatex
